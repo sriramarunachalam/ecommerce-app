@@ -1,9 +1,9 @@
 import React from "react";
-import './menu-item.styles.scss'
+import { withRouter } from "react-router-dom";
+import "./menu-item.styles.scss";
 
-const MenuItem = ({ title, imageUrl, size }) => (
+const MenuItem = ({ title, imageUrl, size, history }) => (
   <div className={`${size} menu-item`}>
-    
     <div // This is to resize the image on hover. Its given as a separate div so that it doesnt affect the other elements.
       className="background-image"
       style={{
@@ -16,5 +16,5 @@ const MenuItem = ({ title, imageUrl, size }) => (
     </div>
   </div>
 );
-
-export default MenuItem;
+ 
+export default withRouter(MenuItem);
